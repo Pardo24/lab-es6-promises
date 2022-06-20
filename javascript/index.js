@@ -58,10 +58,10 @@ getInstruction("mashedPotatoes", 4, (step4) => {
 
 obtainInstruction('steak', 0)
   .then( (step0) => {
-    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`  })
-
-  obtainInstruction('steak', 1)
-  .then( (step1) => {
+    document.querySelector("#steak").innerHTML += `<li>${step0}</li>` 
+  return obtainInstruction(step1) 
+    }  )
+ .then( (step1) => {
     document.querySelector("#steak").innerHTML += `<li>${step1}</li>`  })
 
   obtainInstruction('steak', 2)
@@ -98,6 +98,7 @@ obtainInstruction('steak', 0)
     document.querySelector("#steak").innerHTML += `<li>${step8}</li>`;
   })
 
+ 
 
 // Iteration 3 using async/await
 async function makeBroccoli(){
